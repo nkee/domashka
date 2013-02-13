@@ -1,0 +1,129 @@
+#include<iostream>
+#define NUM 80
+using namespace std;
+int a[NUM];
+int length;
+void createMas()
+{
+cout<<"Input amount array:";
+cin >> length;
+cout<<"Input array:\n";
+for (int i = 0; i < length; i++)
+{
+cin >> a[i];
+}
+}
+
+int elementbycount(unsigned int count)
+{
+  return a[count];
+}
+signed int getcountvalue(int value)
+{
+	for (int i = 1; i < NUM;i++)
+	{
+		if(a[i]==value)
+		{
+return i;
+		}
+	}
+	return -1;
+}
+bool insertafter(int count,int value)
+{
+	bool r;
+	for (int i = length; i > count;i--)
+	{
+		a[i]=a[i-1];	
+	}
+	a[count+1]=value;
+	length++;
+	return r = true;
+}
+void deletebyvalue(int value)
+{
+	for (int i = 0; i < NUM;i++)
+	{
+		if(a[i]==value)
+		{
+a[i]=-1;
+		}
+	}
+}
+void deletebycount(int count)
+{
+	
+	a[count]=-1;
+	
+}
+int main()
+{
+	int c;
+	do
+	{
+cout<<"Menu"<<endl;
+cout<<"1.sozdat massiv"<<endl;
+cout<<"2.vivesti element po nomeru"<<endl;
+cout<<"3.vivesti nomer elementa"<<endl;
+cout<<"4.dobavit element posle"<<endl;
+cout<<"5.udalit element s nomerom"<<endl;
+cout<<"6.udalit element s znacheniem"<<endl;
+cout<<"7. vivesti massiv"<<endl;
+cout<<"vvedite komandu"<<endl;
+cin>>c;
+switch(c)
+{
+case 1:
+	createMas();
+	break;
+case 2:
+	unsigned int d;
+	cout<<"vvedite nomer"<<endl;
+	cin>>d;
+	cout<<elementbycount(d)<<endl;
+	break;
+case 3:
+	 int e;
+	cout<<"vvedite znachenie"<<endl;
+	cin>>e;
+	cout<<getcountvalue(e)<<endl;
+	break;
+case 4:
+	int val;
+	int k;
+	bool r;
+	cout<<"vvedite posle kakogo elementa hotite dobavit element"<<endl;
+	cin>>k;
+	cout<<"vvedite novij element"<<endl;
+	cin>>val;
+	r=insertafter(k,val);
+	if(r==true)
+	{
+cout<<"uspeh"<<endl;
+	}
+	break;
+case 5:
+	int v;
+	cout<<"Vvedite nomer udalaemogo elementa"<<endl;
+	cin>>v;
+	deletebycount(v);
+	break;
+case 6:
+	int b;
+	cout<<"Vvedite znachenie udalaemogo elementa"<<endl;
+	cin>>b;
+	deletebyvalue(b);
+	break;
+case 7:
+	for (int i = 0; i < length; i++)
+{
+	if(a[i]!=-1)
+	cout<<i<<"  "<<a[i]<<endl;
+	
+}
+	break;
+default:cout<<"nevernij vvod"<<endl;
+}
+	}
+	while(c!=0);
+}
