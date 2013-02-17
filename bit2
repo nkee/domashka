@@ -1,0 +1,74 @@
+
+//(H) Дано целое число A и натуральное число i. Выведите значение i-го бита числа A, то есть 0 или 1.
+
+#include<iostream>
+using namespace std;
+int main()
+{
+  int m[8];
+  int d,i=0,j=0;
+
+cout<<"Vvedite chislo ot 0 do 255"<<endl;
+do
+{
+cin>>d;
+if(d>255)
+{
+	cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+while(d>255);
+while(d!=0)
+ {
+ if(d%2==1)
+ {
+ m[i]=1;
+ }
+ else
+ {
+ m[i]=0;
+ }
+ i++;
+ j++;
+ d/=2; 
+ }
+ cout<<"Itog ";
+ int arr[8];
+ int k=0;
+ if(j<8)
+ {
+	 for(int i=0;i<8-j;i++)
+	 {
+		 cout<<0;
+		 arr[k]=0;
+		 k++;
+	 }
+ }
+ for(i=j-1;i>=0;i--)
+ {
+ cout<<m[i];
+ arr[k]=m[i];
+ k++;
+ }
+ int z;
+ cout<<"Vvedite chislo ot 0 do 7"<<endl;
+ do
+{
+cin>>z;
+if(z>7)
+{
+	cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+while(d>7);
+for(int i=0;i<8;i++)
+{
+	cout<<arr[i];
+}
+cout<<endl;
+cout<<arr[z];
+ }
