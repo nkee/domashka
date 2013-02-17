@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+//(I) Дано число типа unsigned char, то есть от 0 до 255. Выведите его в битовой форме: 8 бит, старшие биты слева, младшие – справа.
+
+int main()
+{
+  int m[8];
+	int d,i=0,j=0;
+
+cout<<"Vvedite chislo ot 0 do 255"<<endl;
+do
+{
+cin>>d;
+if(d>255)
+{
+	cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+while(d>255);
+while(d!=0)
+ {
+ if(d%2==1)
+ {
+ m[i]=1;
+ }
+ else
+ {
+ m[i]=0;
+ }
+ i++;
+ j++;
+ d/=2; 
+ }
+ cout<<"Itog ";
+ if(j<8)
+ {
+	 for(int i=0;i<8-j;i++)
+	 {
+		 cout<<0;
+	 }
+ }
+ for(i=j-1;i>=0;i--)
+ {
+ cout<<m[i];
+ }
+ 
+ }
+ 
