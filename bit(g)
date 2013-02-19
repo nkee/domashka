@@ -1,0 +1,51 @@
+//(G) Дано целое число A и натуральное число n. Выведите число, которое состоит только из n последних бит числа A (то есть обнулите все биты числа A, кроме последних n).
+#include<bitset>
+#include<iostream>
+using namespace std;
+int main()
+{
+  int m[8];
+  int d,i=0,j=0;
+
+cout<<"Vvedite chislo ot 0 do 255"<<endl;
+do
+{
+cin>>d;
+if(d>255)
+{
+  cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+while(d>255);
+
+ int z;
+ cout<<"Vvedite chislo ot 1 do 8"<<endl;
+ do
+{
+cin>>z;
+if(z>8)
+{
+  cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+while(z>8);
+int x=1;
+ i=0;
+do
+{
+	d=d&(~x);
+	x=x<<1;
+
+	i++;
+}
+while(i<z);
+int s;
+s=~d;
+
+cout<<bitset<8>(s)<<endl;
+
+ }
