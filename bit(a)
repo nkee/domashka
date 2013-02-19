@@ -1,0 +1,23 @@
+//(A) Дано число n<32. Запишите число 2n, то есть число, у которого n-й бит равен 1, а остальные – нули.
+#include<bitset>
+#include<iostream>
+using namespace std;
+int main()
+{
+  int n;
+
+	cout<<"Vvedite chislo ot 0 do 32"<<endl;
+do
+{
+cin>>n;
+if(n>32)
+{
+	cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+while(n>32);
+	int s = 1<<n;
+	cout<<bitset<8>(s)<<endl;
+}
