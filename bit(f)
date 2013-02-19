@@ -1,0 +1,70 @@
+//(F) Дано целое число A и натуральное число i. Выведите число, которое получается из числа A установкой значения i-го бита равному 0
+#include<bitset>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+  enum bits {bit1=0x01,bit2=0x02,bit3=0x04,bit4=0x08,bit5=0x10,bit6=20,bit7=0x40,bit8=0x80};
+  int m[8];
+  int d,i=0,j=0;
+
+cout<<"Vvedite chislo ot 0 do 255"<<endl;
+do
+{
+cin>>d;
+if(d>255)
+{
+	cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+while(d>255);
+
+ int z;
+ cout<<"Vvedite chislo ot 1 do 8"<<endl;
+ do
+{
+cin>>z;
+if(z>8)
+{
+	cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+while(z>8);
+int s;
+switch(z)
+{
+case 1:
+	s=d&(~bit1);
+	break;
+case 2:
+	s=d&(~bit2);
+	break;
+case 3:
+	s=d&(~bit3);
+	break;
+case 4:
+	s=d&(~bit4);
+	break;
+case 5:
+	s=d&(~bit5);
+	break;
+case 6:
+	s=d&(~bit6);
+	break;
+case 7:
+	s=d&(~bit7);
+	break;
+case 8:
+	s=d&(~bit8);
+	break;
+default:cout<<"nevernij vvod"<<endl;
+}
+
+cout<<bitset<8>(s)<<endl;
+
+ }
