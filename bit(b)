@@ -1,0 +1,52 @@
+//(B) Даны два неравных числа: n и m, не превосходящие 31. Вычислите 2n+2m.
+#include<bitset>
+#include<iostream>
+using namespace std;
+int main()
+{
+  int d;
+  int z;
+ 
+ 
+cout<<"Vvedite chislo ot 0 do 31"<<endl;
+do
+{
+cin>>d;
+if(d>31)
+{
+  cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+while(d>31);
+
+ cout<<"Vvedite chislo ot 0 do 31"<<endl;
+ do
+{
+cin>>z;
+if(z>31)
+{
+  cout<<"povtorite vvod"<<endl;
+}
+
+}
+
+
+ 
+while(z>31);
+ if(z==d)
+ {
+cout<<"ne ravnih"<<endl;
+return 0;
+ }
+  int a=1<<d;
+  int b=1<<z;
+  int c=a<<1;
+  int y=b<<1;
+
+  int s = c | y;
+
+cout<<bitset<8>(s)<<endl;
+return 0;
+  }
